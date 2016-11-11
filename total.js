@@ -1,4 +1,4 @@
-var $input_quantidade = document.querySelector("qt");
+var $input_quantidade = document.querySelector("#qt");
 var $output_total = document.querySelector("#total");
 
 $input_quantidade.onclick=calculaEMostraTotal;
