@@ -1,0 +1,19 @@
+body { 
+	padding-top: 70px; 
+}
+
+<style>
+   .navbar {
+       margin: 0;
+}
+</style>
+
+.container {
+	width: 940px;
+	margin: 0 auto;
+}
+
+  .navbar .glyphicon {
+       color: white;
+}
+

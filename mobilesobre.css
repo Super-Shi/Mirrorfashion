@@ -1,0 +1,68 @@
+.container {
+	width: 96%;
+}
+
+header h1{
+	text-align: center;
+}
+
+header img{
+	max-width: 50%;
+}
+
+.sacola{
+	display: none;
+}
+
+.menu-opcoes{
+	position: static;
+	text-align: center;
+}
+
+.menu-opcoes ul li{
+	display: inline-block;
+	margin: 5px;
+}
+
+#centro-distribuicao img{
+	max-width:100%;
+	margin-right: 0;
+}
+
+figure{
+	max-width:50%;
+}
+
+figcaption{
+	font-size:50%;
+}
+
+#familia-pelho img{
+	max-width: 100%;
+	text-align: left;
+}
+
+footer{
+	background-image: url(../img/fundo-rodape.png);
+	clear: both;
+	padding: 20px 0;
+	width: 96%;
+}
+
+p{
+	width: 80%;
+}
+
+section ul{
+	width: 80%
+}
+
+h2{
+	margin-left: 10px;
+	width: 96%;
+}
+
+section h1{
+	width: 90%;
+	margin-left: 10px;
+}
