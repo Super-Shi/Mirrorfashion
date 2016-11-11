@@ -32,7 +32,7 @@
 			<h1>Otima escolha!</h1>
 			<p>Obrigado por comprar na Mirror Fashion!
 			Preencha seus dados para efetivar a compra.</p>
-			<p>eusou otimo</p>
+			<p>esse e um teste</p>
 		</div>
 	</div>
 	<div class="container">
