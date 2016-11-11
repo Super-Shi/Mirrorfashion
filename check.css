@@ -1,19 +1,26 @@
-body { 
-	padding-top: 70px; 
+ .form-control:invalid {
+       border: 1px solid #cc0000;
 }
 
-<style>
+
    .navbar {
        margin: 0;
 }
-</style>
 
-.container {
-	width: 940px;
-	margin: 0 auto;
+.navbar .glyphicon {
+       color: yellow;
 }
 
-  .navbar .glyphicon {
-       color: white;
+body { padding-top: 70px; }
+
+.navbar-header img{
+	width: 80%;
+	height: 80%;
 }
 
+@media (min-width: 940px){
+	.navbar-header img{
+	width: 100%;
+	height: 100%;
+	}
+}
