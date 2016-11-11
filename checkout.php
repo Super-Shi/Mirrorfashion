@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
    <html>
    <head>
        <meta charset="UTF-8">
@@ -30,7 +30,7 @@
 
     <div class="jumbotron">
       <div class="container">
-           <h1>Ótima escolha!</h1>
+           <h1>Ótima escolha!</h1>
            <p>Obrigado por comprar na Mirror Fashion!
            Preencha seus dados para efetivar a compra.</p>
       </div><!--fim container-->
@@ -49,16 +49,26 @@
                    <dt>Produto</dt>
                    <dd><?=$_POST['nome'] ?></dd>
                    
-                   <dt>Preço</dt>
-                   <dd><?=$_POST['preco'] ?></dd>                   
+                   <dt>Preço</dt>
+                   <dd id="preco"><?=$_POST['preco'] ?></dd>                   
 
                    <dt>Cor</dt>
                    <dd><?=$_POST['cor'] ?></dd>
 
                    <dt>Tamanho</dt>
                    <dd><?=$_POST['tamanho'] ?></dd>
-
                </dl>
+               <!--acrescenta o campo quantidade e valor total da compra-->
+               <div class="form-group">
+                 <label for="qt">Quantidade</label>
+                 <input type="number" id="qt" class="form-control" min="0" max="99" value="1">
+               </div>
+               <div class="form-group">
+                 <label for="total">Total</label>
+                 <output for="qt valor" id="total" class="form-control"><?= $_POST['preco'] ?>
+                 </output>
+               </div>
+               <!--fim do campo quantidade e valor total da compra-->
             </div><!--fim painel-body-->
         </div><!--fim panel panel-default-->
         </div><!--fim col-sm-4-->
@@ -129,6 +139,9 @@
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/converteMoedas.js"></script>
+<script src="js/testaConversao.js"></script>
+<script src="js/total.js"></script>
 
    </body>
    </html>
