@@ -74,6 +74,90 @@
         </div><!--fim col-sm-4-->
       
       <form class="col-sm-8 col-lg-9">
+<!doctype html>
+   <html>
+   <head>
+       
+      <?php
+             $conexao = mysqli_connect("localhost", "root", "", "WD43");
+             $dados = mysqli_query($conexao, "SELECT * FROM produtos WHERE id = $_POST[id]");
+             $produto = mysqli_fetch_array($dados);
+      ?>
+
+
+       <meta charset="UTF-8">
+       <title>Checkout Mirror Fashion</title>
+       <meta name="viewport" content="width=device-width">
+       <link rel="stylesheet" href="css/bootstrap-flatly.css">
+       <link rel="stylesheet" href="css/check.css">
+   </head>
+   <body>
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.php">
+        <img src="img/logo.png" alt="Mirror Fashion">
+        </a>
+
+        <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+        <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
+
+      </div>
+      <ul class="nav navbar-nav collapse navbar-collapse">
+        <li><a href="sobre.php">Sobre</a></li>
+        <li><a href="#">Ajuda</a></li>
+        <li><a href="#">Perguntas Frequentes</a></li>
+        <li><a href="#">Entre em contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+           <h1>Ótima escolha!</h1>
+           <p>Obrigado por comprar na Mirror Fashion!
+           Preencha seus dados para efetivar a compra.</p>
+      </div><!--fim container-->
+    </div><!--fim jumbotron-->
+    
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel heading">
+               <h2>Sua compra</h2>
+            </div><!--fim panel heading-->
+            <div class="panel-body">
+              <img src="img/produtos/foto<?= $_POST['id'] ?>-<?= $_POST['cor'] ?>.png" class="img-thumbnail img-responsive" hidden-xs>
+               <dl>
+                   <dt>Produto</dt>
+                   <dd id="nome"><?= $produto['nome'] ?></dd>
+                   
+                   <dt>Preço</dt>
+                   <dd id="preco"><?= $produto['preco'] ?></dd>                   
+
+                   <dt>Cor</dt>
+                   <dd><?=$_POST['cor'] ?></dd>
+
+                   <dt>Tamanho</dt>
+                   <dd><?=$_POST['tamanho'] ?></dd>
+               </dl>
+               <!--acrescenta o campo quantidade e valor total da compra-->
+               <div class="form-group">
+                 <label for="qt">Quantidade</label>
+                 <input type="number" id="qt" class="form-control" min="0" max="99" value="1">
+               </div>
+               <div class="form-group">
+                 <label for="total">Total</label>
+                 <output for="qt valor" id="total" class="form-control"><?= $produto['preco'] ?>
+                 </output>
+               </div>
+               <!--fim do campo quantidade e valor total da compra-->
+            </div><!--fim painel-body-->
+        </div><!--fim panel panel-default-->
+        </div><!--fim col-sm-4-->
+      
+      <form class="col-sm-8 col-lg-9">
       <div class="row">
         <fieldset class="col-md-6">
           <legend>Dados Pessoais</legend>
@@ -93,7 +177,7 @@
 
           <div class="form-group">
             <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="999.999.999-99" required>
+            <input type="text" class="form-control" id="cpf" name="cpf" data-mask="999.999.999-99" required>
           </div>
 
           <div class="checkbox">
@@ -110,7 +194,7 @@
 
           <div class="form-group">
             <label for="numero-cartao">Numero - CVV</label>
-            <input type="text" class="form-control" id="numero-cartao" name="numero-cartao">
+            <input type="text" class="form-control" id="numero-cartao" name="numero-cartao" data-mask="999 999 999 999 - 999">
           </div>
 
           <div class="form-group">
@@ -139,6 +223,7 @@
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/inputmask-plugin.js"></script>
 <script src="js/converteMoedas.js"></script>
 <script src="js/testaConversao.js"></script>
 <script src="js/total.js"></script>
