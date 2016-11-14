@@ -20,6 +20,16 @@
       <h1><?= $produto['nome'] ?></h1>
       <p>por apenas <?= $produto['preco'] ?></p>
 
+      <!--botao like do facebook-->
+      <div class="fb-like" data-href="http://www.mirrorfashion.net"
+      data-send="false" data-layout="box_count"
+      data-width="58" data-show-faces="false">
+      </div>
+
+      <!--botao like do twitter-->
+      <a href="https://twitter.com/share"
+        class="twitter-share-button" data-count="vertical">Tweet</a>
+
       <form action="checkout.php" method="POST">
         <fieldset class="cores">
           <legend>Escolha a cor</legend>
@@ -84,8 +94,25 @@
 </div>
   <?php include("rodape.php"); ?>
 
+<!--botao facebook-->
 <script src="js/jquery.js"></script>
 <script src="js/produto.js"></script>
+<div id="fb-root"></div>
+   <script>(function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = "http://connect.facebook.net/pt_BR/all.js#xfbml=1";
+     fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--botao twitter-->
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
+js.src="http://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
 
        </body>
      </html>
